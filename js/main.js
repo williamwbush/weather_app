@@ -1,6 +1,3 @@
-
-
-
 const form = document.querySelector('#location_form')
 console.log(form)
 
@@ -30,28 +27,4 @@ form.addEventListener('submit', ( event ) => {
     }
    
     _displayWeather();
-
-
-
-
-
-    // document.getElementById('city').innerHTML = 
-
-
-    // prevents page reloading
-
-    // const api_key = '0c9275e005544d1d828e0dbe3329e8a8';
-    // let query_location = document.querySelector('#location');
-    // let request = new Request(`api.openweathermap.org/data/2.5/weather?q=${query_location}&appid=${api_key}`)
-
-    // let result = await fetch(request);
-
-    // let response = await result.json();
-
-    // console.log(response)
-
-    // document.getElementById('city')[0].innerHTML = 'New Text'    
 } )
-
-
-
