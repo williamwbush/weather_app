@@ -32,8 +32,45 @@ form.addEventListener('submit', ( event ) => {
     async function _displayWeather(){
         weather = {}
         weather = await _getWeather();
-        document.getElementById('city').innerHTML = weather.current_weather.name;
+
+        function addAlerts() {
+            for(i=0; i < weather.forecast.alerts.length; i++){
+                let button = document.createElement("span");
+                button.id = "alert"
+                button.innerHTML = weather.forecast.alerts[i].event
+                button.title = weather.forecast.alerts[i].description
+
+                const alert_div = document.getElementById("alert-div");
+                alert_div.appendChild(button);
+            }
+        }
+        while(document.getElementById('alert')){
+            alert = document.getElementById('alert')
+            alert.remove()
+        }
+        while(document.getElementById('alert-info')){
+            alert_info = document.getElementById('alert-info')
+            alert_info.remove()
+        }
+
+        if(weather.forecast.alerts){
+            addAlerts()
+
+            let alert_info = document.createElement("p");
+            alert_info.innerHTML = "Hover over for more details"
+            alert_info.id = "alert-info"
+
+            const current_conditions = document.getElementById("current-conditions");
+            parentDiv = document.getElementById("weather-card");
+            parentDiv.insertBefore(alert_info, current_conditions);
+        }
+
+
+        document.getElementById('city').innerHTML = weather.current_weather.name;        
         document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
+        const wind_directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
+        document.getElementById('wind-direction').innerHTML = wind_directions[Math.floor((weather.current_weather.wind.deg + 11.25) / 22.5)]; 
+        console.log(weather.current_weather.wind.deg)
         document.getElementById('feels-like').innerHTML = Math.round((weather.current_weather.main.feels_like - 273.15) * 9 / 5 + 32);
         document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32); 
         document.getElementById('humidity').innerHTML = weather.current_weather.main.humidity + "%";
@@ -77,3 +114,4 @@ form.addEventListener('submit', ( event ) => {
 
     _displayWeather()
 } )
+

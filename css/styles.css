@@ -2,7 +2,7 @@ form {
     width: 225px;
     margin: auto;
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 form div {
@@ -19,9 +19,32 @@ button {
     text-align: center;
 }
 
+#alert-div{
+    display:flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+#alert {
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+    margin-top: 30px;
+    padding: 5px;
+    width: fit-content;
+    background-color: rgb(252, 63, 63);
+    color: white;
+}
+
+#alert-info{
+    font-size: 15px;
+    border-bottom: 0;
+}
+
 .card {
     width: 600px;
-    height: 540px;
+    height: fit-content;
     margin: auto;
     padding: 1rem;
     border-radius: 1rem;
@@ -59,4 +82,9 @@ sup {
 h5 {
     margin: 0;
     margin-top: 30px;
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
 }
