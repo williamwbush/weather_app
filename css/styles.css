@@ -70,6 +70,28 @@ button {
     text-align: center;
 }
 
+#temp-unit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-link{
+    width: auto;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 0;
+    text-decoration: none;
+}
+.btn:active {
+    box-shadow: none;
+  }
+
+#city{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 #alert-div{
     display:flex;
     flex-direction: row;
@@ -144,9 +166,7 @@ sup {
     margin-bottom: 10px;
 }
 
-#f {
-    font-size: 25px;
-}
+
 
 h4 {
     margin: 0;

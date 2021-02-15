@@ -27,13 +27,18 @@
     
 
 <div class="card" id="weather-card"> 
+    <div id="temp-unit">
+        <button type="button" class="btn btn-link" id="celcius">C</button>
+        <p>/</p>
+        <button type="button" class="btn btn-link" id="fahrenheit">F</button>
+    </div>
     <div class="title" id="city-div">
         <h3 id="city"></h3>
     </div>
     <div id=alert-div></div>
     <div class="d-flex justify-content-center" id="current-conditions">
         <div class="p-2" id="current-temp-color">
-            <span id="current-temp">--</span><sup>&deg;</sup><span id="f">F</span>
+            <span id="current-temp">--</span><sup>&deg;</sup><span id="unit" style="font-size:25px;"></span>
         </div>
         <div class="p-2">
             <span class="icon"><img id="icon-image-1" class="img-fluid" src="" alt=""><img id="icon-image-2" class="img-fluid" src="" alt=""></span>
@@ -43,13 +48,13 @@
         <div class="p-2" id="today-temps">
             <div class="header">High</div>
             <div class="value">
-                <span id="today-high-temp">--</span><sup style="font-size:15px">&deg;</sup>F
+                <span id="today-high-temp">--</span><sup style="font-size:15px">&deg;</sup>
             </div>
         </div>
         <div class="p-2" id="today-temps">
             <div class="header">Low</div>
             <div class="value">
-                <span id="today-low-temp">--</span><sup style="font-size:15px">&deg;</sup>F
+                <span id="today-low-temp">--</span><sup style="font-size:15px">&deg;</sup>
             </div>
         </div>
     </div>
@@ -57,13 +62,13 @@
         <div class="col-4">
             <div class="header">Wind</div>
             <div class="value">
-                <span id="wind-direction"></span> <span id="wind">--</span> mph
+                <span id="wind-direction"></span> <span id="wind">--</span> <span id="wind-unit"></span>
             </div>
         </div>
         <div class="col-4">
             <div class="header">Feels Like</div>
             <div class="value">
-                <span id="feels-like">--</span><sup style="font-size:15px">&deg;</sup>F
+                <span id="feels-like">--</span><sup style="font-size:15px">&deg;</sup>
             </div>
         </div>
         <div class="col-4">

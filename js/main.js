@@ -71,6 +71,7 @@ async function _displayWeather(){
     const wind_directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
     document.getElementById('wind-direction').innerHTML = wind_directions[Math.floor((weather.current_weather.wind.deg + 11.25) / 22.5)]; 
     document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
+    document.getElementById('wind-unit').innerHTML = "mph"
     document.getElementById('feels-like').innerHTML = Math.round((weather.current_weather.main.feels_like - 273.15) * 9 / 5 + 32);
     document.getElementById('humidity').innerHTML = weather.current_weather.main.humidity + "%";
     
@@ -113,6 +114,65 @@ async function _displayWeather(){
         day = document.getElementById(`day-${i+1}`)
         day.innerHTML = days[(day_of_week + i + 1) % 7].slice(0,3)
     }
+
+    const celsius = document.querySelector('#celcius')
+    console.log(celcius)
+    const fahrenheit = document.querySelector('#fahrenheit')
+
+    celcius.addEventListener('click', ( event ) => {
+        event.preventDefault();
+
+        document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
+        document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
+        document.getElementById('today-low-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.min - 273.15); 
+        document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed); 
+        document.getElementById('wind-unit').innerHTML = "m/s"
+        document.getElementById('feels-like').innerHTML = Math.round(weather.current_weather.main.feels_like - 273.15);
+
+        document.getElementById("day-1-high").innerHTML = Math.round(weather.forecast.daily[1].temp.max - 273.15);
+        document.getElementById("day-2-high").innerHTML = Math.round(weather.forecast.daily[2].temp.max - 273.15);
+        document.getElementById("day-3-high").innerHTML = Math.round(weather.forecast.daily[3].temp.max - 273.15);
+        document.getElementById("day-4-high").innerHTML = Math.round(weather.forecast.daily[4].temp.max - 273.15);
+        document.getElementById("day-5-high").innerHTML = Math.round(weather.forecast.daily[5].temp.max - 273.15);
+        document.getElementById("day-6-high").innerHTML = Math.round(weather.forecast.daily[6].temp.max - 273.15);
+        document.getElementById("day-7-high").innerHTML = Math.round(weather.forecast.daily[7].temp.max - 273.15);
+    
+        document.getElementById("day-1-low").innerHTML = Math.round(weather.forecast.daily[1].temp.min - 273.15);
+        document.getElementById("day-2-low").innerHTML = Math.round(weather.forecast.daily[2].temp.min - 273.15);
+        document.getElementById("day-3-low").innerHTML = Math.round(weather.forecast.daily[3].temp.min - 273.15);
+        document.getElementById("day-4-low").innerHTML = Math.round(weather.forecast.daily[4].temp.min - 273.15);
+        document.getElementById("day-5-low").innerHTML = Math.round(weather.forecast.daily[5].temp.min - 273.15);
+        document.getElementById("day-6-low").innerHTML = Math.round(weather.forecast.daily[6].temp.min - 273.15);
+        document.getElementById("day-7-low").innerHTML = Math.round(weather.forecast.daily[7].temp.min - 273.15);
+
+    } )
+    fahrenheit.addEventListener('click', ( event ) => {
+        event.preventDefault();
+
+        document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32);  
+        document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
+        document.getElementById('today-low-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.min - 273.15) * 9 / 5 + 32); 
+        document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
+        document.getElementById('wind-unit').innerHTML = "mph"
+        document.getElementById('feels-like').innerHTML = Math.round((weather.current_weather.main.feels_like - 273.15) * 9 / 5 + 32);
+
+        document.getElementById("day-1-high").innerHTML = Math.round((weather.forecast.daily[1].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-2-high").innerHTML = Math.round((weather.forecast.daily[2].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-3-high").innerHTML = Math.round((weather.forecast.daily[3].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-4-high").innerHTML = Math.round((weather.forecast.daily[4].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-5-high").innerHTML = Math.round((weather.forecast.daily[5].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-6-high").innerHTML = Math.round((weather.forecast.daily[6].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-7-high").innerHTML = Math.round((weather.forecast.daily[7].temp.max - 273.15) * 9/5 + 32);
+    
+        document.getElementById("day-1-low").innerHTML = Math.round((weather.forecast.daily[1].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-2-low").innerHTML = Math.round((weather.forecast.daily[2].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-3-low").innerHTML = Math.round((weather.forecast.daily[3].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-4-low").innerHTML = Math.round((weather.forecast.daily[4].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-5-low").innerHTML = Math.round((weather.forecast.daily[5].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-6-low").innerHTML = Math.round((weather.forecast.daily[6].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-7-low").innerHTML = Math.round((weather.forecast.daily[7].temp.min - 273.15) * 9/5 + 32);
+
+    } )
 }
 
 _displayWeather()
@@ -236,4 +296,3 @@ form.addEventListener('submit', ( event ) => {
 
     _displayWeather()
 } )
-
