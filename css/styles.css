@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-right: 4vw;
+    margin-right: 8vw;
 }
 
 h1 {
