@@ -27,7 +27,7 @@ const _getWeather = async () => {
 }
 
 async function _displayWeather(){
-    weather = {}
+    let weather = {};
     weather = await _getWeather();
 
     function addAlerts() {
@@ -66,6 +66,8 @@ async function _displayWeather(){
     document.getElementById('city').innerHTML = weather.current_weather.name;        
     
     document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32); 
+    document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
+    document.getElementById('today-low-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.min - 273.15) * 9 / 5 + 32); 
     const wind_directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
     document.getElementById('wind-direction').innerHTML = wind_directions[Math.floor((weather.current_weather.wind.deg + 11.25) / 22.5)]; 
     document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
@@ -78,13 +80,14 @@ async function _displayWeather(){
         document.getElementById("icon-image-2").src = `http://openweathermap.org/img/wn/${weather.current_weather.weather[1].icon}@2x.png`;
     }
     
-    document.getElementById("icon-image-3").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[1].weather[0].icon}@2x.png`;
-    document.getElementById("icon-image-4").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[2].weather[0].icon}@2x.png`;
-    document.getElementById("icon-image-5").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[3].weather[0].icon}@2x.png`;
-    document.getElementById("icon-image-6").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[4].weather[0].icon}@2x.png`;
-    document.getElementById("icon-image-7").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[5].weather[0].icon}@2x.png`;
-    document.getElementById("icon-image-8").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[6].weather[0].icon}@2x.png`;
-    document.getElementById("icon-image-9").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[7].weather[0].icon}@2x.png`;
+    console.log(weather.forecast)
+    document.getElementById("icon-image-3").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[1].weather[0].icon}@2x.png`;
+    document.getElementById("icon-image-4").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[2].weather[0].icon}@2x.png`;
+    document.getElementById("icon-image-5").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[3].weather[0].icon}@2x.png`;
+    document.getElementById("icon-image-6").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[4].weather[0].icon}@2x.png`;
+    document.getElementById("icon-image-7").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[5].weather[0].icon}@2x.png`;
+    document.getElementById("icon-image-8").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[6].weather[0].icon}@2x.png`;
+    document.getElementById("icon-image-9").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[7].weather[0].icon}@2x.png`;
 
     document.getElementById("day-1-high").innerHTML = Math.round((weather.forecast.daily[1].temp.max - 273.15) * 9/5 + 32);
     document.getElementById("day-2-high").innerHTML = Math.round((weather.forecast.daily[2].temp.max - 273.15) * 9/5 + 32);
@@ -183,6 +186,8 @@ form.addEventListener('submit', ( event ) => {
         document.getElementById('city').innerHTML = weather.current_weather.name;        
         
         document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32); 
+        document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
+        document.getElementById('today-low-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.min - 273.15) * 9 / 5 + 32); 
         const wind_directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
         document.getElementById('wind-direction').innerHTML = wind_directions[Math.floor((weather.current_weather.wind.deg + 11.25) / 22.5)]; 
         document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
@@ -195,13 +200,13 @@ form.addEventListener('submit', ( event ) => {
             document.getElementById("icon-image-2").src = `http://openweathermap.org/img/wn/${weather.current_weather.weather[1].icon}@2x.png`;
         }
         
-        document.getElementById("icon-image-3").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[1].weather[0].icon}@2x.png`;
-        document.getElementById("icon-image-4").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[2].weather[0].icon}@2x.png`;
-        document.getElementById("icon-image-5").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[3].weather[0].icon}@2x.png`;
-        document.getElementById("icon-image-6").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[4].weather[0].icon}@2x.png`;
-        document.getElementById("icon-image-7").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[5].weather[0].icon}@2x.png`;
-        document.getElementById("icon-image-8").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[6].weather[0].icon}@2x.png`;
-        document.getElementById("icon-image-9").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[7].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-3").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[1].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-4").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[2].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-5").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[3].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-6").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[4].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-7").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[5].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-8").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[6].weather[0].icon}@2x.png`;
+        document.getElementById("icon-image-9").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[7].weather[0].icon}@2x.png`;
 
         document.getElementById("day-1-high").innerHTML = Math.round((weather.forecast.daily[1].temp.max - 273.15) * 9/5 + 32);
         document.getElementById("day-2-high").innerHTML = Math.round((weather.forecast.daily[2].temp.max - 273.15) * 9/5 + 32);

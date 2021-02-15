@@ -9,11 +9,10 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 8vh;
-    margin-bottom: 3vh;
+    margin-top: 4vh;
     color: rgba(1, 26, 165, 0.247);
     font-family: 'Montserrat', sans-serif;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 form {
@@ -22,7 +21,7 @@ form {
     justify-content: center;
     width: 500px;
     margin: auto;
-    margin-top: 5vh;
+    margin-top: 2vh;
     margin-bottom: 2vh;
 }
 
@@ -89,7 +88,7 @@ button {
 }
 
 h3 {
-    margin-top: 20px;
+    margin-top: 12px;
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -118,6 +117,11 @@ sup {
     font-size: 20px;
 }
 
+#today-temps {
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
 .header {
     margin-bottom: 10px;
 }
@@ -128,7 +132,7 @@ sup {
 
 h4 {
     margin: 0;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 0;
     font-weight: 400;
 }
