@@ -1,0 +1,62 @@
+form {
+    width: 225px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+form div {
+    padding: 2vw;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+.card {
+    width: 600px;
+    height: 540px;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+.p-2 {
+    margin-top: auto;
+    margin-bottom: auto;    
+}
+
+#current-temp {
+    font-size: 30px;
+}
+
+sup {
+    font-size: 20px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+#f {
+    font-size: 25px;
+}
+
+h5 {
+    margin: 0;
+    margin-top: 30px;
+}

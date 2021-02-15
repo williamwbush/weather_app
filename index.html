@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" defer></script>
 </head>
 <body>
 
+    
 <form id="location_form">
     <div class="form-group">
         <input type="text" class="form-control" id="location" placeholder="Enter city or zipcode">
@@ -17,35 +20,93 @@
     <button type="submit" class="btn btn-primary" id="submitButton">Search</button>
 </form>
     
-<h3 id="city">City, Country</h3>
 
-<div class="container">
-    <div class="row">
-        <h3>High</h3>
+<div class="card"> 
+    <div class="title">
+        <h3 id="city"></h3>
+    </div>
+    <div>
+        <h5>Current Conditions</h5>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">
+            <span id="current-temp">--</span><sup>&deg;</sup><span id="f">F</span>
+        </div>
+        <div class="p-2">
+            <span class="icon"><img id="icon-image-1" class="img-fluid" src="" alt=""><img id="icon-image-2" class="img-fluid" src="" alt=""></span>
+        </div>
     </div>
     <div class="row">
-        <h5 id="high">--</h5>
+        <div class="col-4">
+            <div class="header">Wind</div>
+            <div class="value" id="today-high-temp">
+                <span id="wind">--</span><sup style="font-size:25px">mph</sup>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="header">Feels Like</div>
+            <div class="value" id="today-low-temp">
+                <span id="feels-like">--</span><sup style="font-size:15px">&deg;</sup>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="header">Humidity</div>
+            <div class="value" id="humidity"></div>
+        </div>
     </div>
-    <div class="row">
-        <h3>Low</h3>
+    <div>
+        <h5>7 Day Forecast</h5>
     </div>
-    <div class="row">
-        <h5 id="low">--</h5>
-    </div>
-    <div class="row">
-        <h3>Forecast</h3>
-    </div>
-    <div class="row">
-        <h5 id="forecast">--</h5>
-    </div>
-    <div class="row">
-        <h3>Humidity</h3>
-    </div>
-    <div class="row">
-        <h5 id="humidity">--</h5>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">
+            <p id="day-1"></p>
+            <img id="icon-image-3" class="img-fluid" src="" alt="">
+            <p id="day-1-high">High</p>
+            <p id="day-1-low">Low</p>
+        </div>
+        <div class="p-2">
+            <p id="day-2"></p>
+            <img id="icon-image-4" class="img-fluid" src="" alt="">
+            <p id="day-2-high">High</p>
+            <p id="day-2-low">Low</p>
+        </div>
+        <div class="p-2">
+            <p id="day-3"></p>
+            <img id="icon-image-5" class="img-fluid" src="" alt="">
+            <p id="day-3-high">High</p>
+            <p id="day-3-low">Low</p>
+        </div>
+        <div class="p-2">
+            <p id="day-4"></p>
+            <img id="icon-image-6" class="img-fluid" src="" alt="">
+            <p id="day-4-high">High</p>
+            <p id="day-4-low">Low</p>
+        </div>
+        <div class="p-2">
+            <p id="day-5"></p>
+            <img id="icon-image-7" class="img-fluid" src="" alt="">
+            <p id="day-5-high">High</p>
+            <p id="day-5-low">Low</p>
+        </div>
+        <div class="p-2">
+            <p id="day-6"></p>
+            <img id="icon-image-8" class="img-fluid" src="" alt="">
+            <p id="day-6-high">High</p>
+            <p id="day-6-low">Low</p>
+        </div>
+        <div class="p-2">
+            <p id="day-7"></p>
+            <img id="icon-image-9" class="img-fluid" src="" alt="">
+            <p id="day-7-high">High</p>
+            <p id="day-7-low">Low</p>
+        </div>
     </div>
 </div>
-
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
 </body>
-</html>
+</html> -->
+
+
 
