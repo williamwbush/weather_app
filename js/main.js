@@ -126,6 +126,8 @@ async function _displayWeather(){
         document.getElementById('celcius').style.color = 'black';
         document.getElementById('celcius').style.fontWeight = 700;
         document.getElementById('fahrenheit').style.fontWeight = 350;
+        document.getElementById('celcius').style.fontSize = "17px";
+        document.getElementById('fahrenheit').style.fontSize = "16px";
 
         document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
         document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
@@ -158,6 +160,8 @@ async function _displayWeather(){
         document.getElementById('celcius').style.color = 'blue';
         document.getElementById('celcius').style.fontWeight = 350;
         document.getElementById('fahrenheit').style.fontWeight = 700;
+        document.getElementById('celcius').style.fontSize = "16px";
+        document.getElementById('fahrenheit').style.fontSize = "17px";
 
         document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32);  
         document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
