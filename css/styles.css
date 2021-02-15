@@ -1,5 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+width: 100%;
+background: linear-gradient(to bottom right, rgb(85, 193, 255), white);
+}
+
 form {
-    width: 225px;
+    width: 250px;
     margin: auto;
     text-align: center;
     margin-top: 10vh;
@@ -11,6 +20,7 @@ form div {
 
 button {
     margin-bottom: 20px;
+    background-color: seashell;
 }
 
 .container {
@@ -48,7 +58,7 @@ button {
     margin: auto;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: rgba(238, 237, 237, 0.22);
+    background-color: rgba(255, 255, 255, 0.87);
     border-color: rgba(238, 237, 237, 0.22);
     box-shadow: 5px 6px 6px 2px #e9ecef;
     text-align: center
@@ -87,4 +97,8 @@ h5 {
 
 p {
     margin-bottom: 0;
+}
+
+#seven-day {
+    margin-bottom: 15px;
 }

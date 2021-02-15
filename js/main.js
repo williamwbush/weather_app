@@ -67,18 +67,20 @@ form.addEventListener('submit', ( event ) => {
 
 
         document.getElementById('city').innerHTML = weather.current_weather.name;        
-        document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
+        
+        document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32); 
         const wind_directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
         document.getElementById('wind-direction').innerHTML = wind_directions[Math.floor((weather.current_weather.wind.deg + 11.25) / 22.5)]; 
-        console.log(weather.current_weather.wind.deg)
+        document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
         document.getElementById('feels-like').innerHTML = Math.round((weather.current_weather.main.feels_like - 273.15) * 9 / 5 + 32);
-        document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32); 
         document.getElementById('humidity').innerHTML = weather.current_weather.main.humidity + "%";
+        
         document.getElementById("icon-image-1").src = `http://openweathermap.org/img/wn/${weather.current_weather.weather[0].icon}@2x.png`;
         document.getElementById("icon-image-2").src = ""
         if(weather.current_weather.weather[1]){
             document.getElementById("icon-image-2").src = `http://openweathermap.org/img/wn/${weather.current_weather.weather[1].icon}@2x.png`;
         }
+        
         document.getElementById("icon-image-3").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[1].weather[0].icon}@2x.png`;
         document.getElementById("icon-image-4").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[2].weather[0].icon}@2x.png`;
         document.getElementById("icon-image-5").src = `http://openweathermap.org/img/wn/${weather.forecast.daily[3].weather[0].icon}@2x.png`;
@@ -105,11 +107,12 @@ form.addEventListener('submit', ( event ) => {
 
 
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        let d = weather.forecast.current.dt
-        let day2 = days[(d.getDay() + 2) % 7];
-        console.log(day2)
-
-        document.getElementById("day-2").innerHTML = day2
+        let today = new Date();
+        let day_of_week = today.getDay()
+        for(i=0; i < 7; i++){
+            day = document.getElementById(`day-${i+1}`)
+            day.innerHTML = days[(day_of_week + i + 1) % 7].slice(0,3)
+        }
     }
 
     _displayWeather()
