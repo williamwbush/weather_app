@@ -50,12 +50,17 @@ button {
     background-color: rgba(11, 93, 216, 0.589);
     border-color: rgb(11, 93, 216);
     color: white;
+    border-radius: 20px;
 }
 
 .btn-primary:hover {
     color: white;
     background-color:  rgba(65, 121, 206, 0.589);
     border-color:  rgba(11, 93, 216, 0.589);
+}
+
+#location {
+    border-radius: 20px;
 }
 
 
