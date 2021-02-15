@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet"> 
     <script src="js/main.js" defer></script>
 </head>
 <body>
 
+<h1>WEATHER APP</h1>
     
-<form id="location_form">
+<form id="location-form">
     <div class="form-group">
         <input type="text" class="form-control" id="location" placeholder="Enter city or zipcode">
     </div>
@@ -26,11 +29,11 @@
         <h3 id="city"></h3>
     </div>
     <div>
-        <h5>Current Conditions</h5>
+        <h4>Current Conditions</h4>
     </div>
     <div id=alert-div></div>
     <div class="d-flex justify-content-center" id="current-conditions">
-        <div class="p-2">
+        <div class="p-2" id="current-temp-color">
             <span id="current-temp">--</span><sup>&deg;</sup><span id="f">F</span>
         </div>
         <div class="p-2">
@@ -47,7 +50,7 @@
         <div class="col-4">
             <div class="header">Feels Like</div>
             <div class="value" id="today-low-temp">
-                <span id="feels-like">--</span><sup style="font-size:15px">&deg;</sup>
+                <span id="feels-like">--</span><sup style="font-size:15px">&deg;</sup>F
             </div>
         </div>
         <div class="col-4">
@@ -56,7 +59,7 @@
         </div>
     </div>
     <div id="seven-day">
-        <h5>7 Day Forecast</h5>
+        <h4>7 Day Forecast</h4>
     </div>
     <div class="d-flex justify-content-center">
         <div class="p-2">

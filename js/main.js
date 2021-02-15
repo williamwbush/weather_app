@@ -1,4 +1,4 @@
-const form = document.querySelector('#location_form')
+const form = document.querySelector('#location-form')
 
 form.addEventListener('submit', ( event ) => {
     event.preventDefault();
