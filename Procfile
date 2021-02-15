@@ -1,1 +1,1 @@
---preload --timeout 60
+app:index.html --preload --timeout 60
