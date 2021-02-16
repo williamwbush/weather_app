@@ -9,7 +9,7 @@ body {
 
 #sun {
     position: relative;
-    margin-right: 20vw;
+    margin: auto;
     padding-top: 1vh;
     width: 120px;
     height: 120px;
