@@ -4,28 +4,31 @@ html {
 
 body {
     width: 100%;
-    background: linear-gradient(to bottom right, rgb(85, 193, 255), white);
+    background: linear-gradient(to bottom right, rgb(197, 233, 253), white);
 }
 
 #sun {
-    width: 120px;
-    height: 120px;
-    opacity: 0.75;
+    width: 80px;
+    height: 80px;
+    margin-top: 25px;
+    margin-right: 10px;
+    opacity: .9;
 }
 
 #header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-right: 8vw;
+    margin-right: 5vw;
 }
 
 h1 {
     text-align: center;
     margin-top: 4vh;
-    color: rgba(1, 26, 165, 0.247);
+    color: rgba(1, 26, 165, 0.507);
     font-family: 'Montserrat', sans-serif;
     font-size: 50px;
+    font-weight: 300;
 }
 
 form {
@@ -47,8 +50,8 @@ button {
 
 .btn-primary {
     color: black;
-    background-color: rgba(11, 93, 216, 0.589);
-    border-color: rgb(11, 93, 216);
+    background-color:  rgba(0, 140, 255, 0.623);
+    border-color: rgba(0, 140, 255, 0.185);
     color: white;
     border-radius: 20px;
 }
@@ -68,6 +71,7 @@ button {
     width: 40%;
     margin: auto;
     text-align: center;
+    color: white;
 }
 
 #temp-unit {
@@ -94,6 +98,10 @@ button {
     font-size: 17px;
 }
 
+#slash {
+    color: black;
+}
+
 #city{
     margin-top: 0;
     margin-bottom: 0;
@@ -113,7 +121,7 @@ button {
     margin-top: 30px;
     padding: 5px;
     width: fit-content;
-    background-color: rgb(252, 63, 63);
+    background-color: rgba(252, 63, 63, 0.829);
     color: white;
 }
 
@@ -128,7 +136,8 @@ button {
     margin: auto;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.87);
+    color: white;
+    background-color: rgba(0, 140, 255, 0.521);
     border-color: rgba(238, 237, 237, 0.22);
     box-shadow: 5px 6px 6px 2px #e9ecef;
     text-align: center;
@@ -148,16 +157,10 @@ h3 {
 
 .value {
     font-size: 25px;
-    color: rgb(11, 93, 216);
 }
 
 #current-temp {
     font-size: 50px;
-    color: rgb(11, 93, 216);
-}
-
-#current-temp-color {
-    color: rgb(11, 93, 216);
 }
 
 sup {
@@ -181,8 +184,6 @@ sup {
     margin-bottom: 10px;
 }
 
-
-
 h4 {
     margin: 0;
     margin-top: 20px;
@@ -195,6 +196,14 @@ p {
 }
 
 #seven-day {
-    margin-bottom: 15px;
+    border-top: solid rgb(236, 235, 235) 1px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-top: 15px;
+}
+
+#seven-day h4 {
+    margin: 0;
+    padding: 0;
 }
 
