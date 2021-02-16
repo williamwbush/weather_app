@@ -309,4 +309,77 @@ form.addEventListener('submit', ( event ) => {
     }
 
     _displayWeather()
+
+    const celsius = document.querySelector('#celcius')
+    console.log(celcius)
+    const fahrenheit = document.querySelector('#fahrenheit')
+
+    celcius.addEventListener('click', ( event ) => {
+        event.preventDefault();
+
+        document.getElementById('fahrenheit').style.color = 'blue';
+        document.getElementById('celcius').style.color = 'black';
+        document.getElementById('celcius').style.fontWeight = 700;
+        document.getElementById('fahrenheit').style.fontWeight = 350;
+        document.getElementById('celcius').style.fontSize = "17px";
+        document.getElementById('fahrenheit').style.fontSize = "16px";
+
+        document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
+        document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
+        document.getElementById('today-low-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.min - 273.15); 
+        document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed); 
+        document.getElementById('wind-unit').innerHTML = "m/s"
+        document.getElementById('feels-like').innerHTML = Math.round(weather.current_weather.main.feels_like - 273.15);
+
+        document.getElementById("day-1-high").innerHTML = Math.round(weather.forecast.daily[1].temp.max - 273.15);
+        document.getElementById("day-2-high").innerHTML = Math.round(weather.forecast.daily[2].temp.max - 273.15);
+        document.getElementById("day-3-high").innerHTML = Math.round(weather.forecast.daily[3].temp.max - 273.15);
+        document.getElementById("day-4-high").innerHTML = Math.round(weather.forecast.daily[4].temp.max - 273.15);
+        document.getElementById("day-5-high").innerHTML = Math.round(weather.forecast.daily[5].temp.max - 273.15);
+        document.getElementById("day-6-high").innerHTML = Math.round(weather.forecast.daily[6].temp.max - 273.15);
+        document.getElementById("day-7-high").innerHTML = Math.round(weather.forecast.daily[7].temp.max - 273.15);
+    
+        document.getElementById("day-1-low").innerHTML = Math.round(weather.forecast.daily[1].temp.min - 273.15);
+        document.getElementById("day-2-low").innerHTML = Math.round(weather.forecast.daily[2].temp.min - 273.15);
+        document.getElementById("day-3-low").innerHTML = Math.round(weather.forecast.daily[3].temp.min - 273.15);
+        document.getElementById("day-4-low").innerHTML = Math.round(weather.forecast.daily[4].temp.min - 273.15);
+        document.getElementById("day-5-low").innerHTML = Math.round(weather.forecast.daily[5].temp.min - 273.15);
+        document.getElementById("day-6-low").innerHTML = Math.round(weather.forecast.daily[6].temp.min - 273.15);
+        document.getElementById("day-7-low").innerHTML = Math.round(weather.forecast.daily[7].temp.min - 273.15);
+
+    } )
+    fahrenheit.addEventListener('click', ( event ) => {
+        event.preventDefault();
+
+        document.getElementById('fahrenheit').style.color = 'black';
+        document.getElementById('celcius').style.color = 'blue';
+        document.getElementById('celcius').style.fontWeight = 350;
+        document.getElementById('fahrenheit').style.fontWeight = 700;
+        document.getElementById('celcius').style.fontSize = "16px";
+        document.getElementById('fahrenheit').style.fontSize = "17px";
+
+        document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32);  
+        document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
+        document.getElementById('today-low-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.min - 273.15) * 9 / 5 + 32); 
+        document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
+        document.getElementById('wind-unit').innerHTML = "mph"
+        document.getElementById('feels-like').innerHTML = Math.round((weather.current_weather.main.feels_like - 273.15) * 9 / 5 + 32);
+
+        document.getElementById("day-1-high").innerHTML = Math.round((weather.forecast.daily[1].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-2-high").innerHTML = Math.round((weather.forecast.daily[2].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-3-high").innerHTML = Math.round((weather.forecast.daily[3].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-4-high").innerHTML = Math.round((weather.forecast.daily[4].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-5-high").innerHTML = Math.round((weather.forecast.daily[5].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-6-high").innerHTML = Math.round((weather.forecast.daily[6].temp.max - 273.15) * 9/5 + 32);
+        document.getElementById("day-7-high").innerHTML = Math.round((weather.forecast.daily[7].temp.max - 273.15) * 9/5 + 32);
+    
+        document.getElementById("day-1-low").innerHTML = Math.round((weather.forecast.daily[1].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-2-low").innerHTML = Math.round((weather.forecast.daily[2].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-3-low").innerHTML = Math.round((weather.forecast.daily[3].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-4-low").innerHTML = Math.round((weather.forecast.daily[4].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-5-low").innerHTML = Math.round((weather.forecast.daily[5].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-6-low").innerHTML = Math.round((weather.forecast.daily[6].temp.min - 273.15) * 9/5 + 32);
+        document.getElementById("day-7-low").innerHTML = Math.round((weather.forecast.daily[7].temp.min - 273.15) * 9/5 + 32);
+
+    } )
 } )
