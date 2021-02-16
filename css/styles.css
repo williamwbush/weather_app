@@ -161,12 +161,20 @@ h3 {
 }
 
 sup {
-    font-size: 20px;
+    font-size: 35px;
 }
 
 #today-temps {
     margin-left: 55px;
     margin-right: 55px;
+}
+
+#today-low-temp {
+    font-size: 35px;
+}
+
+#today-high-temp {
+    font-size: 35px;
 }
 
 .header {
