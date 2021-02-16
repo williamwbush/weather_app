@@ -81,7 +81,6 @@ async function _displayWeather(){
         document.getElementById("icon-image-2").src = `http://openweathermap.org/img/wn/${weather.current_weather.weather[1].icon}@2x.png`;
     }
     
-    console.log(weather.forecast)
     document.getElementById("icon-image-3").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[1].weather[0].icon}@2x.png`;
     document.getElementById("icon-image-4").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[2].weather[0].icon}@2x.png`;
     document.getElementById("icon-image-5").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[3].weather[0].icon}@2x.png`;
@@ -116,7 +115,6 @@ async function _displayWeather(){
     }
 
     const celsius = document.querySelector('#celcius')
-    console.log(celcius)
     const fahrenheit = document.querySelector('#fahrenheit')
 
     celcius.addEventListener('click', ( event ) => {
@@ -340,7 +338,6 @@ form.addEventListener('submit', ( event ) => {
     _displayWeather()
 
     const celsius = document.querySelector('#celcius')
-    console.log(celcius)
     const fahrenheit = document.querySelector('#fahrenheit')
 
     celcius.addEventListener('click', ( event ) => {
