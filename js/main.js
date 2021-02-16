@@ -278,6 +278,7 @@ form.addEventListener('submit', ( event ) => {
         document.getElementById("icon-image-9").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[7].weather[0].icon}@2x.png`;
         
         if(document.getElementById('fahrenheit').style.color == 'black'){
+            console.log('fahrenheit is black')
             document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
             document.getElementById('wind-unit').innerHTML = "mph"
     
@@ -302,6 +303,8 @@ form.addEventListener('submit', ( event ) => {
             document.getElementById("day-6-low").innerHTML = Math.round((weather.forecast.daily[6].temp.min - 273.15) * 9/5 + 32);
             document.getElementById("day-7-low").innerHTML = Math.round((weather.forecast.daily[7].temp.min - 273.15) * 9/5 + 32);
         } else {
+            console.log('fahrenheit is blue')
+            console.log(document.getElementById('fahrenheit').style)
             document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
             document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
             document.getElementById('today-low-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.min - 273.15); 
