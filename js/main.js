@@ -1,7 +1,7 @@
-const form = document.querySelector('#location-form')
-
 let city_submitted = "Chicago"
-    
+
+let temp_unit = "f"
+
 const _getWeather = async () => {
     let api_key = "0c9275e005544d1d828e0dbe3329e8a8"
 
@@ -114,18 +114,18 @@ async function _displayWeather(){
         day.innerHTML = days[(day_of_week + i + 1) % 7].slice(0,3)
     }
 
-    const celsius = document.querySelector('#celcius')
+    const celcius = document.querySelector('#celcius')
     const fahrenheit = document.querySelector('#fahrenheit')
 
     celcius.addEventListener('click', ( event ) => {
         event.preventDefault();
 
+        temp_unit = "c"
+
         document.getElementById('fahrenheit').style.color = 'blue';
         document.getElementById('celcius').style.color = 'black';
         document.getElementById('celcius').style.fontWeight = 600;
-        document.getElementById('fahrenheit').style.fontWeight = 350;
-        document.getElementById('celcius').style.fontSize = "17px";
-        document.getElementById('fahrenheit').style.fontSize = "16px";
+        document.getElementById('fahrenheit').style.fontWeight = 300;
 
         document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
         document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
@@ -154,12 +154,12 @@ async function _displayWeather(){
     fahrenheit.addEventListener('click', ( event ) => {
         event.preventDefault();
 
+        temp_unit = "f"
+
         document.getElementById('fahrenheit').style.color = 'black';
         document.getElementById('celcius').style.color = 'blue';
-        document.getElementById('celcius').style.fontWeight = 350;
+        document.getElementById('celcius').style.fontWeight = 300;
         document.getElementById('fahrenheit').style.fontWeight = 600;
-        document.getElementById('celcius').style.fontSize = "16px";
-        document.getElementById('fahrenheit').style.fontSize = "17px";
 
         document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32);  
         document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
@@ -188,6 +188,9 @@ async function _displayWeather(){
 }
 
 _displayWeather()
+
+
+const form = document.querySelector('#location-form')
 
 form.addEventListener('submit', ( event ) => {
     event.preventDefault();
@@ -254,7 +257,6 @@ form.addEventListener('submit', ( event ) => {
             parentDiv.insertBefore(alert_info, current_conditions);
         }
 
-
         document.getElementById('city').innerHTML = weather.current_weather.name;        
     
     
@@ -276,9 +278,8 @@ form.addEventListener('submit', ( event ) => {
         document.getElementById("icon-image-7").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[5].weather[0].icon}@2x.png`;
         document.getElementById("icon-image-8").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[6].weather[0].icon}@2x.png`;
         document.getElementById("icon-image-9").src = `https://openweathermap.org/img/wn/${weather.forecast.daily[7].weather[0].icon}@2x.png`;
-        
-        if(document.getElementById('fahrenheit').style.color == 'black'){
-            console.log('fahrenheit is black')
+
+        if(temp_unit == "f"){
             document.getElementById('wind').innerHTML = Math.round(weather.current_weather.wind.speed * 2.237); 
             document.getElementById('wind-unit').innerHTML = "mph"
     
@@ -303,8 +304,6 @@ form.addEventListener('submit', ( event ) => {
             document.getElementById("day-6-low").innerHTML = Math.round((weather.forecast.daily[6].temp.min - 273.15) * 9/5 + 32);
             document.getElementById("day-7-low").innerHTML = Math.round((weather.forecast.daily[7].temp.min - 273.15) * 9/5 + 32);
         } else {
-            console.log('fahrenheit is blue')
-            console.log(document.getElementById('fahrenheit').style)
             document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
             document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
             document.getElementById('today-low-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.min - 273.15); 
@@ -340,18 +339,18 @@ form.addEventListener('submit', ( event ) => {
 
     _displayWeather()
 
-    const celsius = document.querySelector('#celcius')
+    const celcius = document.querySelector('#celcius')
     const fahrenheit = document.querySelector('#fahrenheit')
 
     celcius.addEventListener('click', ( event ) => {
         event.preventDefault();
 
+        temp_unit = "c"
+
         document.getElementById('fahrenheit').style.color = 'blue';
         document.getElementById('celcius').style.color = 'black';
         document.getElementById('celcius').style.fontWeight = 600;
-        document.getElementById('fahrenheit').style.fontWeight = 350;
-        document.getElementById('celcius').style.fontSize = "17px";
-        document.getElementById('fahrenheit').style.fontSize = "16px";
+        document.getElementById('fahrenheit').style.fontWeight = 300;
 
         document.getElementById('current-temp').innerHTML = Math.round(weather.current_weather.main.temp - 273.15); 
         document.getElementById('today-high-temp').innerHTML = Math.round(weather.forecast.daily[0].temp.max - 273.15); 
@@ -380,12 +379,12 @@ form.addEventListener('submit', ( event ) => {
     fahrenheit.addEventListener('click', ( event ) => {
         event.preventDefault();
 
+        temp_unit = "f"
+
         document.getElementById('fahrenheit').style.color = 'black';
         document.getElementById('celcius').style.color = 'blue';
-        document.getElementById('celcius').style.fontWeight = 350;
+        document.getElementById('celcius').style.fontWeight = 300;
         document.getElementById('fahrenheit').style.fontWeight = 600;
-        document.getElementById('celcius').style.fontSize = "16px";
-        document.getElementById('fahrenheit').style.fontSize = "17px";
 
         document.getElementById('current-temp').innerHTML = Math.round((weather.current_weather.main.temp - 273.15) * 9 / 5 + 32);  
         document.getElementById('today-high-temp').innerHTML = Math.round((weather.forecast.daily[0].temp.max - 273.15) * 9 / 5 + 32); 
@@ -409,6 +408,5 @@ form.addEventListener('submit', ( event ) => {
         document.getElementById("day-5-low").innerHTML = Math.round((weather.forecast.daily[5].temp.min - 273.15) * 9/5 + 32);
         document.getElementById("day-6-low").innerHTML = Math.round((weather.forecast.daily[6].temp.min - 273.15) * 9/5 + 32);
         document.getElementById("day-7-low").innerHTML = Math.round((weather.forecast.daily[7].temp.min - 273.15) * 9/5 + 32);
-
     } )
 } )

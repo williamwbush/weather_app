@@ -9,11 +9,11 @@ body {
 
 #sun {
     position: relative;
-    margin: auto;
     padding-top: 1vh;
     width: 120px;
     height: 120px;
     margin-top: 10px;
+    margin-right: 275px;
     opacity: .9;
 }
 
@@ -21,13 +21,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-right: 5vw;
+    width: 500px;
+    margin: auto;
 }
 
 h1 {
     position: absolute;
-    margin: auto;
-    margin-left: 5%;
     margin-top: 4vh;
     color: rgba(1, 26, 165, 0.507);
     font-family: 'Montserrat', sans-serif;
@@ -101,6 +100,12 @@ button {
     font-weight: 700;
     font-size: 17px;
 }
+
+#celcius {
+    font-size: 17px;
+}
+
+
 
 #slash {
     color: black;
