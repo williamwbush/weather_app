@@ -193,10 +193,6 @@ sup {
     font-size: 35px;
 }
 
-.header {
-    margin-bottom: 10px;
-}
-
 h4 {
     margin: 0;
     margin-top: 20px;
@@ -220,3 +216,6 @@ p {
     padding: 0;
 }
 
+#credit {
+    margin-top: 15px;
+}
