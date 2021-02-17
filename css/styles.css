@@ -1,10 +1,11 @@
-html {
+html{
     height: 100%;
 }
 
 body {
     width: 100%;
-    background: linear-gradient(to bottom right, rgb(197, 233, 253), white);
+    background: linear-gradient(rgb(197, 233, 253), white);
+    background-repeat: repeat-x;
 }
 
 #sun {
